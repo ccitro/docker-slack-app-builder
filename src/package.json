@@ -1,7 +1,5 @@
 {
-  "name": "slack-app-builder",
-  "version": "1.0.0",
-  "description": "Slack app builder",
+  "main": "./dist/src/main.js",
   "engines": {
     "node": "10.x",
     "npm": "6.x"
@@ -27,6 +25,15 @@
     "uuid": "^3.2.1",
     "weighted": "^0.3.0",
     "xml2js": "^0.4.19"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "start": "node dist/src/main.js",
+    "watch": "tsc -w",
+    "build-latest": "./build-latest.sh",
+    "build": "yarn run build-backend && yarn run build-frontend",
+    "build-frontend": "tsc -p tsconfig-frontend.json && cp -rf src/public dist/ && find src/ -name '*.ejs' -exec cp --parents \\{\\} dist/ \\;",
+    "build-backend": "tsc"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^5.0.0",
