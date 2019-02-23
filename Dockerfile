@@ -9,5 +9,5 @@ RUN yarn config set cache-folder /builder/yarn-cache && \
     yarn
 
 # copy node_modules to a builder directory for future builds, remove skeleton app
-RUN mv /docker-slack-app-builder/node_module /builder/node_modules && \
+RUN mv /docker-slack-app-builder/node_modules /builder/node_modules && \
     rm -rf /docker-slack-app-builder
