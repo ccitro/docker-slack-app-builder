@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-RUN apk --no-cache add python g++ make bash
+RUN apk --no-cache add python g++ make bash git openssh-client
 
 # install skeleton app to build node_modules and yarn cache
 ADD src /docker-slack-app-builder
