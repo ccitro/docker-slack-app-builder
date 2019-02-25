@@ -7,7 +7,6 @@ RUN apk --no-cache add curl && \
 
 FROM mhart/alpine-node:base-10
 COPY --from=builder /usr/local/share/yarn /usr/local/share/yarn
-ADD src /docker-slack-app-builder
 
 # setup yarn from builder in path 
 RUN ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
